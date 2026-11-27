@@ -4,9 +4,15 @@
 
 # Exercise 1
 def ReadFile(FileName):
-    # Write your code here
-    pass
+    try:
+        file = open(FileName, "r")
+        text = file.read()
+        file.close()
+        return text
 
+    except:
+        print("File not found")
+        return ""
 
 # Exercise 2
 def ReadNumber(FileName):
@@ -24,4 +30,3 @@ def SaveMessage(FileName, Message):
 def TotalOfFile(FileName):
     # Write your code here
     pass
-
