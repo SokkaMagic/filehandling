@@ -22,12 +22,14 @@ def ReadNumber(FileName):
         num = int(num)
         file.close()
         return num
-    except ValueError:
-        print("Not a number")
-        return ""
     except FileNotFoundError:
         print("File not found")
-        return ""
+        return -1
+    
+    except ValueError:
+        print("Not a number")
+        return -1
+
 
 
 
