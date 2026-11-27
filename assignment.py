@@ -25,21 +25,21 @@ def ReadNumber(FileName):
     except FileNotFoundError:
         print("File not found")
         return -1
-    
+
     except ValueError:
         print("Not a number")
         return -1
 
 
-
-
-
 # Exercise 3
 def SaveMessage(FileName, Message):
-    # Write your code here
-    pass
-
-
+    try:
+        file = open(FileName, "w")
+        file.write(Message)
+        return True
+    except:
+        print("Cannot save")
+        return False
 # Exercise 4
 def TotalOfFile(FileName):
     # Write your code here
