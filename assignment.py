@@ -40,7 +40,24 @@ def SaveMessage(FileName, Message):
     except:
         print("Cannot save")
         return False
+
 # Exercise 4
 def TotalOfFile(FileName):
-    # Write your code here
-    pass
+    try:
+        file = open(FileName, "r")
+        t = 0
+        line = file.readline()
+
+        while line != "":
+            try:
+                num = int(line.strip())
+                t = t + num
+
+            except ValueError:
+                pass
+            line = file.readline()
+        file.close()
+        return t
+    except FileNotFoundError:
+        print("File not found")
+        return -1
