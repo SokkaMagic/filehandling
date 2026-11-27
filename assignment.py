@@ -16,8 +16,20 @@ def ReadFile(FileName):
 
 # Exercise 2
 def ReadNumber(FileName):
-    # Write your code here
-    pass
+    try:
+        file = open(FileName, "r")
+        num = file.readline().strip()
+        num = int(num)
+        file.close()
+        return num
+    except ValueError:
+        print("Not a number")
+        return ""
+    except FileNotFoundError:
+        print("File not found")
+        return ""
+
+
 
 
 # Exercise 3
